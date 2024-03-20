@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: urgent-hornet-java-quarkus-gitops
+  description: This is GitOps manifest for urgent-hornet-java-quarkus   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: urgent-hornet-java-quarkus
+    janus-idp.io/tekton: urgent-hornet-java-quarkus 
+    backstage.io/kubernetes-id: urgent-hornet-java-quarkus 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:urgent-hornet-java-quarkus
